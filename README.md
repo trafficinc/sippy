@@ -96,8 +96,8 @@ Log Errors and Debugging information
 
 Then you can add this code to your controller.
 
-Errors: `$this->logger->log_message(‘error’,’Your log message‘);`
-Debugging: `$this->logger->log_message(‘debug’,’Your log message‘);` 
+* Errors: `$this->logger->log_message(‘error’,’Your log message‘);`
+* Debugging: `$this->logger->log_message(‘debug’,’Your log message‘);` 
 
 
 ## Views
@@ -181,9 +181,9 @@ $config['db_password'] = ''; // Database password
 ```
 There are several helper functions that can also be used in models:
 
-`query($query)` - Returns an array of results from a query
-`execute($query)` - Returns the direct result from a query
-`escapeString($string)` - Escape strings before using them in queries
+* `query($query)` - Returns an array of results from a query
+* `execute($query)` - Returns the direct result from a query
+* `escapeString($string)` - Escape strings before using them in queries
 
 # Helpers & Plug-ins
 
