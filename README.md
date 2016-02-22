@@ -24,7 +24,7 @@ views
 
 When Sippy loads files it assumes they are in the corresponding folders. So make sure you place your files in the correct folders.
 
-We encourage you to use the "assets" folder in the root to store you static resource files (CSS, JS etc) however you can put them anywhere. You can also use the `site_url()` function to help include files in your HTML. For example:
+We encourage you to use the "assets" folder in the root to store you static resource files (CSS, JS etc) however you can put them anywhere. You can also use the `site_url()` function to help include files in your HTML or use `site_url('main/index')` to go to the http://www.yoursite.com/main/index page. For example:
 ```html
 <link rel="stylesheet" href="<?php echo site_url(); ?>assets/css/style.css" type="text/css" media="screen" />
 ```
