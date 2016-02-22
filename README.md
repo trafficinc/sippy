@@ -48,15 +48,13 @@ example.com/main/login
 ```php
 <?php
 
-class Main extends Controller {
+class Main extends Sippy_controller {
 
-    function index()
-    {
+    function index() {
         // This is the default function (i.e. no function is set in the URL)
     }
     
-    function login()
-    {
+    function login() {
         echo 'Hello World!';
     }
 }
@@ -70,7 +68,7 @@ Note that if you need to declare a constructor you must also call the parent con
 ```php
 <?php
 
-class Example extends Controller {
+class Example extends Sippy_controller {
 
     public function __construct()
     {
@@ -92,12 +90,12 @@ There are several helper functions that can also be used in controllers. Most of
 * $this->redirect('some_class/some_function');
 
 Log Errors and Debugging information
-* In your config file, you must enable logging, set to TRUE.
+* In your config file, you must enable logging; set to TRUE.
 
 Then you can add this code to your controller.
 
-* Errors: `$this->logger->log_message(‘error’,’Your log message‘);`
-* Debugging: `$this->logger->log_message(‘debug’,’Your log message‘);` 
+* Errors: `log_message(‘error’,’Your log message‘);`
+* Debugging: `log_message(‘debug’,’Your log message‘);` 
 
 
 ## Views
@@ -182,6 +180,7 @@ $config['db_password'] = ''; // Database password
 There are several helper functions that can also be used in models:
 
 * `query($query)` - Returns an array of results from a query
+* `getrow($query)` - Returns one row from the query
 * `execute($query)` - Returns the direct result from a query
 * `escapeString($string)` - Escape strings before using them in queries
 
