@@ -35,22 +35,20 @@ define('APP_DIR', ROOT_DIR .'application/');
 
 
 // Includes
-require(APP_DIR .'config/config.php');
-require(ROOT_DIR .'system/hook.php');
-require(ROOT_DIR .'system/model.php');
-require(ROOT_DIR .'system/view.php');
-require(ROOT_DIR .'system/controller.php');
-require(ROOT_DIR .'system/sippy.php');
-require(ROOT_DIR .'system/log.php');
+function autoloadum($class) {
+  include ROOT_DIR ."system/".$class.".php";
+}
+spl_autoload_register("autoloadum");
 
+require(ROOT_DIR .'system/sippy.php');
+require(ROOT_DIR .'system/helpf.php');
+
+$config = load_config();
 //load hook class
 $hook = new Sippy_hook($config['activate_hooks']);
-
-global $config,$hook;
-
 //pre system hook
 $hook->call_hook('before_system');
 // Define base URL
 define('BASE_URL', $config['base_url']);
-sippy();
+sippy($config,$hook);
 

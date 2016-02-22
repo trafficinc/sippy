@@ -14,14 +14,16 @@ class Sippy_log {
 	protected $_canwrite = TRUE;
 	protected $_date_fmt = 'Y-m-d H:i:s';
 	protected $_file_permissions = 0644;
+	protected $config;
 
 
-	public function __construct($active) {
-		if (!$active) {
+	public function __construct($config) {
+		if (!$config['activate_logs']) {
 			return;
 		}
+		date_default_timezone_set('America/New_York');
+		$this->config = $config;
 
-		global $config;
 		if ( empty($config['log_path']) ) {
 			$this->_log_path = APP_DIR.'logs/';
 		} else if ($config['log_path'] !== 'logs/' ) {

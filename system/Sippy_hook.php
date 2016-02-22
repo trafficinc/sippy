@@ -40,7 +40,7 @@ class Sippy_hook {
 
 	protected function _run_hook($data)
 	{
-		// Closures/lambda functions and array($object, 'method') callables
+		// Closures/lambda function
 		if (is_callable($data))	{
 			is_array($data) ? $data[0]->{$data[1]}() : $data();
 

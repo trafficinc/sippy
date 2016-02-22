@@ -7,6 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>static/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?php echo site_url(); ?>assets/css/style.css" type="text/css" media="screen" />
 </head>
 <body>

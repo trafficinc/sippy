@@ -1,10 +1,7 @@
 <?php
 
-function sippy() {
-
-	global $config, $hook;
-
-    
+function sippy($config,$hook) {
+	
     // Set our defaults
     $controller = $config['default_controller'];
     $action = 'index';
@@ -42,8 +39,8 @@ function sippy() {
 
     $hook->call_hook('before_controller');
 	// Create object and call method
-	$obj = new $controller;
-    //die(call_user_func_array(array($obj, $action), array_slice($segments, 2)));
+	$obj = new $controller($config);
+
 	call_user_func_array(array($obj, $action), array_slice($segments, 2));
 	$hook->call_hook('after_controller');
 
