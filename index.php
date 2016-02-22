@@ -39,8 +39,7 @@ function autoloadum($class) {
   include ROOT_DIR ."system/".$class.".php";
 }
 spl_autoload_register("autoloadum");
-
-require(ROOT_DIR .'system/sippy.php');
+//Load helper functions
 require(ROOT_DIR .'system/helpf.php');
 
 $config = load_config();
@@ -50,5 +49,4 @@ $hook = new Sippy_hook($config['activate_hooks']);
 $hook->call_hook('before_system');
 // Define base URL
 define('BASE_URL', $config['base_url']);
-sippy($config,$hook);
-
+$sippy = new Sippy($config,$hook);
