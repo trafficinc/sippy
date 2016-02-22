@@ -4,23 +4,7 @@ A lightweight, easy to use PHP Framework for building websites and web apps.
 
 # Documentation
 
-<<<<<<< Updated upstream
 Sippy’s architecture bares striking resemblance to  Codeigniter and another small framework called PIP. However remember that Sippy is a lightweight framework and does not include a lot of the functionality that comes with Codeigniter.  However, with the help of other developers, maybe we can add a lot of functionality through plug-ins and libraries.
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Sippy’s architecture bares striking resemblance to  Codeigniter. However remember that Sippy is a lightweight framework and does not include a lot of the functionality that comes with Codeigniter.  However, you may add functionality through plug-ins, helpers, and controllers.
-=======
-Sippy’s architecture bares striking resemblance to  Codeigniter and another small framework called PIP. However remember that Sippy is a lightweight framework and does not include a lot of the functionality that comes with Codeigniter.  However, with the help of other developers, maybe we can add a lot of functionality through plug-ins and libraries.
->>>>>>> origin/master
-=======
-Sippy’s architecture bares striking resemblance to  Codeigniter and another small framework called PIP. However remember that Sippy is a lightweight framework and does not include a lot of the functionality that comes with Codeigniter.  However, with the help of other developers, maybe we can add a lot of functionality through plug-ins and libraries.
->>>>>>> origin/master
-=======
-Sippy’s architecture bares striking resemblance to  Codeigniter and another small framework called PIP. However remember that Sippy is a lightweight framework and does not include a lot of the functionality that comes with Codeigniter.  However, with the help of other developers, maybe we can add a lot of functionality through plug-ins and libraries.
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 # Model-View-Controller
 
@@ -59,55 +43,19 @@ By default index.php is hidden in the URL. This is done using the .htaccess file
 
 Controllers are the driving force of a Sippy application. As you can see from the URL structure, segments of the URL are mapped to a class and function. These classes are controllers stored in the "application/controller" directory. So for example the URL...
 
-example.com/main/login
+`example.com/main/login`
 ...would map to the following Controller with the filename main.php:
+
 ```php
 <?php
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 class Main extends Sippy_controller {
 
     function index() {
         // This is the default function (i.e. no function is set in the URL)
     }
-    
-    function login() {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
-class Main extends Controller {
-=======
-class Main extends Sippy_controller {
->>>>>>> origin/master
 
-    function index() {
-        // This is the default function (i.e. no function is set in the URL)
-    }
-    
-<<<<<<< HEAD
-    function login()
-    {
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
-=======
     function login() {
->>>>>>> origin/master
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
         echo 'Hello World!';
     }
 }
@@ -121,27 +69,7 @@ Note that if you need to declare a constructor you must also call the parent con
 ```php
 <?php
 
-<<<<<<< Updated upstream
 class Example extends Sippy_controller {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-class Example extends Sippy_controller {
-=======
-class Example extends Controller {
->>>>>>> origin/master
-=======
-class Example extends Controller {
->>>>>>> origin/master
-=======
-class Example extends Sippy_controller {
->>>>>>> origin/master
-=======
-class Example extends Sippy_controller {
->>>>>>> origin/master
->>>>>>> Stashed changes
 
     public function __construct()
     {
@@ -159,64 +87,17 @@ There are several helper functions that can also be used in controllers. Most of
 * View($name) - Load a view
 * Plugin($name) - Load a plugin
 * Helper($name) - Load a helper
-* redirect($location) - Redirect to a page without having to include the base URL. E.g:
-<<<<<<< Updated upstream
+* redirect($location) - Redirect to a page without having to include the base URL. E.g.
 * $this->redirect('some_class/some_function');
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 * ex. $this->redirect('some_class/some_function');
-=======
-* $this->redirect('some_class/some_function');
->>>>>>> origin/master
-=======
-* $this->redirect('some_class/some_function');
->>>>>>> origin/master
-=======
-* $this->redirect('some_class/some_function');
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 Log Errors and Debugging information
 * In your config file, you must enable logging; set to TRUE.
 
-<<<<<<< Updated upstream
-Then you can add this code to your controller.
-
-* Errors: `log_message(‘error’,’Your log message‘);`
-* Debugging: `log_message(‘debug’,’Your log message‘);` 
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 Then you can add this code to your controller for debugging.
 
 * Errors: `log_message(‘error’,’Your log message‘);`
 * Debugging: `log_message(‘debug’,’Your log message‘);` 
-=======
-=======
->>>>>>> origin/master
-Then you can add this code to your controller.
-
-<<<<<<< HEAD
-* Errors: `$this->logger->log_message(‘error’,’Your log message‘);`
-* Debugging: `$this->logger->log_message(‘debug’,’Your log message‘);` 
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
-=======
-* Errors: `log_message(‘error’,’Your log message‘);`
-* Debugging: `log_message(‘debug’,’Your log message‘);` 
->>>>>>> origin/master
-=======
-Then you can add this code to your controller.
-
-* Errors: `log_message(‘error’,’Your log message‘);`
-* Debugging: `log_message(‘debug’,’Your log message‘);` 
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 
 ## Views
@@ -247,6 +128,7 @@ class Main extends Sippy_controller {
 ```
 
 The View class has a helper function called `set($key, $val)` that allows you to pass variables from the Controller to the View.
+
 ```php
 $template = $this->View('main_view');
 $template->set('someval', 17);
@@ -329,24 +211,5 @@ $hook['before_system'] = function() {
 	func1();
 	func2();
 	func3();
-<<<<<<< Updated upstream
 };
 ```
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-};
-=======
-};
-```
->>>>>>> origin/master
-=======
-};
-```
->>>>>>> origin/master
-=======
-};
-```
->>>>>>> origin/master
->>>>>>> Stashed changes
