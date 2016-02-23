@@ -6,7 +6,6 @@ $config['base_url'] = '';
 $config['default_controller'] = 'main';
 // Controller used for errors (e.g. 404, 500 etc) 
 $config['error_controller'] = 'error'; 
-
 //Activate Hooks? TRUE/FALSE
 $config['activate_hooks'] = FALSE; 
 //Activate Logs? TRUE/FALSE

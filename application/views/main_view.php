@@ -1,5 +1,6 @@
-<?php include('header.php'); ?>
-	
+<?php include(VIEWS_DIR .'/header.php'); ?>
+</head>
+<body>	
     <div id="content">
     
         <h1>Welcome to Sippy</h1>
@@ -7,4 +8,4 @@
         
     </div>
 
-<?php include('footer.php'); ?>
+<?php include(VIEWS_DIR .'/footer.php'); ?>

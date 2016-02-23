@@ -45,6 +45,13 @@ class Sippy_model {
 		}
 		return $resultObjects;
 	}
+	
+	//get one row and return an object
+	public function getrowobj($qry) {
+		$result = $this->connection->query($qry) or die('MySQL Error: '. $this->connection->error);
+		$row = $result->fetch_object();
+		return $row;
+	}
 
 	public function getrow($qry) {
 		$result = $this->connection->query($qry) or die('MySQL Error: '. $this->connection->error);

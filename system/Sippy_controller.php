@@ -9,6 +9,7 @@ class Sippy_controller {
 
 		$config = load_config();
         $this->config = $config;
+       
 	}
 	
 	public function Model($name) {
@@ -17,8 +18,13 @@ class Sippy_controller {
 		return $model;
 	}
 	
-	public function View($name) {
-		$view = new Sippy_view($name);
+	public function View($name, $data = NULL) {
+		if (empty($data)) {
+			$view = new Sippy_view($name);
+		} else {
+			$view = new Sippy_view($name,$data);
+		}
+		
 		return $view;
 	}
 	

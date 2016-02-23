@@ -8,5 +8,3 @@
     <meta name="author" content="">
     
     <link rel="stylesheet" href="<?php echo site_url(); ?>assets/css/style.css" type="text/css" media="screen" />
-</head>
-<body>

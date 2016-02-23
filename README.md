@@ -140,6 +140,44 @@ $template->render();
 
 ...and the output would be 17. Any kind of PHP variable can be passed to a view in this way: arrays, etc.
 
+Or in the controller you can call your views with data that will then be available in the view. This can be achieved to ways. In controller...
+
+```php
+$header = array('title'=>'My Title','descr'=>'Login Page','keywords'=>'login,page,mysample');
+
+$template = $this->View('main/index',$header);
+```
+
+In the view, these array items can be accessed like so...
+```
+<?php echo $title; ?>
+```
+Which will show the text "My Title", and so on for the rest of the array.
+
+Another way to access data in views is to name the data array and access it in the controller like so...
+
+```php
+$data['body'] = "Hello World";
+$data['heading'] = array('title'=>'My Title','descr'=>'Login Page','keywords'=>'login,page,mysample');
+
+$template = $this->View('main/index',$data);
+```
+then in the view...
+
+```php
+//body can be accessed 
+<?php echo $body; ?>
+
+//heading can be accessed as an array
+<?php 
+foreach ($heading as $head) {
+    echo $head['title'];
+    ...etc.
+}
+
+?>
+```
+
 ## Models
 
 In Sippy models are classes that deal with data (usually from a database). For example:
@@ -184,6 +222,7 @@ There are several helper functions that can also be used in models:
 
 * `query($query)` - Returns an array of results from a query
 * `getrow($query)` - Returns one row from the query
+* `getrowobj($query)` - Returns a row as an object
 * `execute($query)` - Returns the direct result from a query
 * `escapeString($string)` - Escape strings before using them in queries
 
