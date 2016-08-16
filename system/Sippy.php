@@ -1,5 +1,7 @@
 <?php
 
+//Sippy
+
 class Sippy {
 
 	public $_config;
