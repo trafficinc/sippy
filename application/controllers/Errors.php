@@ -1,6 +1,6 @@
 <?php
 
-class Error extends Sippy_controller {
+class Errors extends Sippy_controller {
 	
 	function index()
 	{

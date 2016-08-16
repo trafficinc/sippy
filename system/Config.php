@@ -10,6 +10,7 @@ class Config {
 	private static $instance;
 
 	protected function __construct() {
+        $config = null;
 		require(APP_DIR .'config/config.php');
 		$this->_config_settings = $config;
 	}

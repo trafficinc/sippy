@@ -8,10 +8,10 @@ class Sippy {
 	public function __construct($config,$hook) {
 		$this->_config = $config;
 		$this->_hook = $hook;
-		$this->sippy();
+		$this->router();
 	}
 
-	public function sippy() {
+	public function router() {
 	
 	    // Set our defaults
 	    $controller = $this->_config['default_controller'];

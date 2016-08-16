@@ -23,7 +23,7 @@ switch (ERRCONTROL) {
 	default:
 		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
 		echo 'Error control environment not set up correctly.';
-		exit(1); // EXIT_ERROR
+		exit(1);
 }
 
 //Start the Session
