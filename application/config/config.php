@@ -1,7 +1,7 @@
 <?php 
 
 // Base URL including trailing slash (e.g. http://localhost/)
-$config['base_url'] = ''; 
+$config['base_url'] = '';
 // Default controller to load
 $config['default_controller'] = 'Main';
 // Controller used for errors (e.g. 404, 500 etc) 

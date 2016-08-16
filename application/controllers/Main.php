@@ -9,6 +9,15 @@ class Main extends Sippy_controller {
 		
 	}
 
+    public function hello() {
+
+        echo "hello World!";
+
+        $example = $this->Model('Example_model');
+        $something = $example->getSomething($id);
+
+    }
+
 
 }
 

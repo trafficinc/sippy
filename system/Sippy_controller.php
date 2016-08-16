@@ -13,7 +13,7 @@ class Sippy_controller {
 	}
 	
 	public function Model($name) {
-		require(APP_DIR .'models/'. strtolower($name) .'.php');
+		require(APP_DIR .'models/'. ucfirst($name) .'.php');
 		$model = new $name;
 		return $model;
 	}
@@ -24,7 +24,6 @@ class Sippy_controller {
 		} else {
 			$view = new Sippy_view($name,$data);
 		}
-		
 		return $view;
 	}
 	
