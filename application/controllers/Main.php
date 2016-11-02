@@ -13,8 +13,8 @@ class Main extends Sippy_controller {
 
         echo "hello World!";
 
-        $example = $this->Model('Example_model');
-        $something = $example->getSomething($id);
+   //     $example = $this->Model('Example_model');
+   //     $something = $example->getSomething($id);
 
     }
 
