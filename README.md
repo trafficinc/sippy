@@ -2,6 +2,8 @@
 
 A lightweight, easy to use PHP Framework for building websites and web apps.
 
+#  This project has been depreciated, the new [Sippy] (https://github.com/trafficinc/sippy) is a more modern architecture, please feel free to contribute to the new one instead, no more updates are going to be made to this project.
+
 # Documentation
 
 Sippy’s architecture bares striking resemblance to  Codeigniter, so we call it a lightweight PHP framework. However, remember that because Sippy is lightweight, it does not include a lot of the functionality that comes with Codeigniter.  Maybe we can add "plug-n-play" functionality via plug-ins, controllers, and libraries.
