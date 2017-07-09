@@ -2,7 +2,7 @@
 
 A lightweight, easy to use PHP Framework for building websites and web apps.
 
-#  This project has been depreciated, the new [Sippy] (https://github.com/trafficinc/sippy) is a more modern architecture, please feel free to contribute to the new one instead, no more updates are going to be made to this project.
+#  The new [Sippy] (https://github.com/trafficinc/sippy) is a more modern architecture, please feel free to contribute to the new one too.
 
 # Documentation
 
