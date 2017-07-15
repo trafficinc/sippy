@@ -3,17 +3,22 @@
 
 class Sippy_controller {
 
+	public 	  $flash;
 	protected $config;
+	protected $security;
+    	protected $validation;
 
 	public function __construct() {
 
 		$config = load_config();
-        $this->config = $config;
-       
+        	$this->config = $config;
+		$this->security = new Security;
+        	$this->flash = new FlashMessages;
+        	$this->validation = new Validation;
 	}
 	
 	public function Model($name) {
-		require(APP_DIR .'models/'. ucfirst($name) .'.php');
+		require(APP_DIR .'models/'. $name .'.php');
 		$model = new $name;
 		return $model;
 	}
@@ -28,11 +33,11 @@ class Sippy_controller {
 	}
 	
 	public function Plugin($name) {
-		require(APP_DIR .'plugins/'. strtolower($name) .'.php');
+		require(APP_DIR .'plugins/'. $name .'.php');
 	}
 	
 	public function Helper($name) {
-		require(APP_DIR .'helpers/'. strtolower($name) .'.php');
+		require(APP_DIR .'helpers/'. $name .'.php');
 		$helper = new $name;
 		return $helper;
 	}
