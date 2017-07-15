@@ -7,7 +7,7 @@ class Sippy_model {
 	public function __construct() {
 	    $config = load_config();
 		
-		$this->connection = mysqli_connect($config['db_host'], $config['db_username'], $config['db_password'], $config['db_name'], $config['mysql_port']) or die('MySQL Error: '. $this->connection->error());
+		$this->connection = mysqli_connect($config['db_host'].':'.$config['mysql_port'], $config['db_username'], $config['db_password'], $config['db_name']) or die('MySQL Error: '. $this->connection->error());
 
 	}
 
@@ -60,9 +60,28 @@ class Sippy_model {
 	}
 
 	public function execute($qry) {
-		$exec = $this->connection->query($qry) or die('MySQL Error: '. $this->connection->error());
+		$exec = $this->connection->query($qry) or die('MySQL Error: '. $this->connection->error);
 		return $exec;
 	}
+	
+	public function insert($table, $data)
+	{
+		$columns = [];
+		$values = [];
+		foreach ($data as $k => $v) {
+		    $columns[] = $k;
+		    $values[] = "'{$v}'";
+		}
+
+		$sql = "INSERT INTO $table ";
+		$sql .= "( ".implode(",",$columns)." )";
+		$sql .= " VALUES ";
+		$sql .= "( ".implode(",",$values)." )";
+		$res = $this->execute($sql);
+		if ($res) {
+		    return $this->connection->insert_id;
+		}
+	    }
     
 }
 
