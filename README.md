@@ -341,3 +341,12 @@ $hook['before_system'] = function() {
   func3();
 };
 ```
+# Quick n Dirty Command line
+
+$ php bin/sippy.php [options]
+
+try
+
+$ php bin/sippy.php -help
+
+* add tasks n things to bin/sippy.php file
