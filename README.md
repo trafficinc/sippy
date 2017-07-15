@@ -286,6 +286,40 @@ Helpers are classes which you can use that don't fall under the category of "con
 Plugins are literally any PHP files and can provide any functionality you want. By loading a plugin you are simply including the PHP file from the "plugins" folder. This can be useful if you want to use third party libraries in your Sippy application.
 
 # Session Helper
+How to use, in controller...
+
+    protected $sess;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->Helper('Session_helper');
+        $this->sess = new Session_helper;
+    }
+    
+    public function sample() {
+        $this->sess->set('email', 'myemail@email.com'); //set session variable
+        $this->sess->get('email'); //get session variable
+        $this->sess->destroy(); //destroy session, good for logout method
+    }
+    
+# Mailer Plugin
+How to use, in controller...
+
+    public function __construct() {
+        parent::__construct();
+        $this->Plugin('Mailer');
+    }
+    
+    public function sample() {
+        $send = Mailer::make()
+        ->setTo('toemail@gmail.com', 'ToPerson')
+        ->setFrom('fromsippy@noreply.com', 'Sippy')
+        ->setSubject('Hello World Test')
+        ->setMessage('Test message form sippy')
+        ->setHtml()
+        ->setWrap(100)
+        ->send();
+    }
 
 
 # Extending Sippy
