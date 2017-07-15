@@ -276,6 +276,7 @@ There are several helper functions that can also be used in models:
 * `getrowobj($query)` - Returns a row as an object
 * `execute($query)` - Returns the direct result from a query
 * `escapeString($string)` - Escape strings before using them in queries
+* `insert($table, $dataArray)` - Insert into a table with an array
 
 # Helpers & Plug-ins
 
