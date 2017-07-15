@@ -99,6 +99,57 @@ Then you can add this code to your controller for debugging.
 * Errors: `log_message(‘error’,’Your log message‘);`
 * Debugging: `log_message(‘debug’,’Your log message‘);` 
 
+Example Controller validation & CSRF token protection & Flash Error/Success Messages:
+#controller
+
+        $data['messSuccess'] = $this->flash->message('success');
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if ($_POST['csrf'] === $_SESSION['csrf_token']) {
+            
+                $validator = $this->validate($_POST, [
+                    'email' => 'required|min:5',
+                    'password' => 'required',
+                ]);
+                
+                if (count($validator) > 0) {
+                    $data['errors'] = $validator;
+                } else {
+                  
+                  // ** Do Stuff **
+                  
+                  $this->flash->message('success','Your flash message here');
+                  $this->redirect('auth/login');
+                }
+              }
+          }
+
+#view
+
+                <h1>Login</h1>
+
+                <?php
+                if (isset($messSuccess)) {
+                    $this->success_block($messSuccess);
+                }
+                if (isset($errors)) {
+                    $this->error_block($errors);
+                }
+                ?>
+
+                <form method="post" action="<?php echo site_url('auth/login'); ?>">
+                    <input type="hidden" name="csrf" value="<?php echo $this->security->generate_csrf_token(); ?>"/>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Login</button>
+                </form>
+                
 
 ## Views
 
@@ -233,6 +284,9 @@ There are two types of additional resources you can use in Sippy.
 Helpers are classes which you can use that don't fall under the category of "controllers". These will usually be classes that provide extra functionality that you can use in your controllers. Sippy comes with two helper classes (Session_helper and Url_helper) which are examples of how to use helpers.
 
 Plugins are literally any PHP files and can provide any functionality you want. By loading a plugin you are simply including the PHP file from the "plugins" folder. This can be useful if you want to use third party libraries in your Sippy application.
+
+# Session Helper
+
 
 # Extending Sippy
 
