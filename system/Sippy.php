@@ -32,6 +32,17 @@ class Sippy {
 		// Do our default checks
 		if(isset($segments[0]) && $segments[0] != '') $controller = ucfirst($segments[0]);
 		if(isset($segments[1]) && $segments[1] != '') $action = $segments[1];
+		
+		//query string ability
+		if (strpos($controller, '?') !== false) {
+		    $cont = explode("?", $controller, 2);
+		    $controller = $cont[0];
+		}
+
+		if (strpos($action, '?') !== false) {
+		    $act = explode("?", $action, 2);
+		    $action = $act[0];
+		}
 
 		// Get our controller file
 	    $path = APP_DIR . 'controllers/' . $controller . '.php';
