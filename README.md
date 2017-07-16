@@ -246,8 +246,8 @@ class Example_model extends Sippy_model {
   
     public function getSomething($id)
     {
-        $id = $this->escapeString($id);
-        $result = $this->query('SELECT * FROM something WHERE id="'. $id .'"');
+        $id = $this->escape($id);
+        $result = $this->query("SELECT * FROM something WHERE id='{$id}' ");
         return $result;
     }
 
@@ -281,7 +281,7 @@ There are several helper functions that can also be used in models:
 * `getrow($query)` - Returns one row from the query
 * `getrowobj($query)` - Returns a row as an object
 * `execute($query)` - Returns the direct result from a query
-* `escapeString($string)` - Escape strings before using them in queries
+* `escape($string)` - Escape strings before using them in queries
 * `insert($table, $dataArray)` - Insert into a table with an array
 
 # Helpers & Plug-ins
