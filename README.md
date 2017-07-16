@@ -39,6 +39,10 @@ By default, URLs in Sippy are designed to be search-engine and human friendly. R
 `example.com/class/function/param`
 By default index.php is hidden in the URL. This is done using the .htaccess file in the root directory.
 
+# Authentication System 
+
+Just put files into your project for easy authentication: https://github.com/trafficinc/sippy-auth
+
 ## Controllers
 
 Controllers are the driving force of a Sippy application. As you can see from the URL structure, segments of the URL are mapped to a class and function. These classes are controllers stored in the "application/controller" directory. So for example the URL...
