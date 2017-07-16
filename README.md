@@ -261,10 +261,9 @@ class Example_model extends Sippy_model {
 function index()
 {
     $example = $this->Model('Example_model');
-    $something = $example->getSomething($id);
+    $data['something'] = $example->getSomething($id);
     
-    $template = $this->View('main_view');
-    $template->set('someval', $something);
+    $template = $this->View('main_view',$data);
     $template->render();
 }
 ```
