@@ -195,7 +195,7 @@ $template->render();
 
 ...and the output would be 17. Any kind of PHP variable can be passed to a view in this way: arrays, etc.
 
-* OR
+**OR**
 
 In the controller you can call your views with data that will then be available in the view. This can be achieved to ways. In controller...
 
@@ -211,7 +211,7 @@ In the view, these array items can be accessed like so...
 ```
 Which will show the text "My Title", and so on for the rest of the array.
 
-The *preferred* way to access data in views is to name the data array and access it in the controller like so...
+The **preferred** way to access data in views is to name the data array and access it in the controller like so...
 
 ```php
 $data['body'] = "Hello World";
