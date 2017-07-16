@@ -9,9 +9,9 @@ class Sippy_view {
 	public function __construct($template, $data = NULL) {
 		$this->security = new Security;
 		if (empty($data)) {
-			$this->template = APP_DIR .'views/'. $template .'.php';
+			$this->template = realpath(APP_DIR .'views/'. $template .'.php');
 		} else {
-			$this->template = APP_DIR .'views/'. $template .'.php';
+			$this->template = realpath(APP_DIR .'views/'. $template .'.php');
 			$this->data_handler($data);
 		}
 	}
