@@ -4,7 +4,7 @@ A lightweight, easy to use PHP Framework for building websites and web apps. Sip
 
 # Documentation
 
-Sippy’s architecture bares striking resemblance to  Codeigniter, so we call it a lightweight PHP framework. However, remember that because Sippy is lightweight, it does not include a lot of the functionality that comes with Codeigniter.  Maybe we can add "plug-n-play" functionality via plug-ins, controllers, and libraries.
+Sippy’s architecture bares striking resemblance to  Codeigniter, so we call it a lightweight PHP framework. However, remember that because Sippy is lightweight, it does not include a lot of the functionality that comes with Codeigniter.  Maybe we can add "plug-n-play" functionality via plug-ins, controllers, and libraries. To use remove the "sample" from config file in Application/config/sample.config.php so it is Application/config/config.php and fill in your configuration data.
 
 # Model-View-Controller
 
