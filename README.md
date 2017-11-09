@@ -267,7 +267,7 @@ function index()
     $template->render();
 }
 ```
-Now the results of your database query would be available in your view in $someval. Connecting to the MySQL Database can be done in your `config/config.php` file:
+Now the results of your database query would be available in your view in $someval. Connecting to the MySQL Database can be done in your `config/config.php` file (remember to rename the `sample.config.php` file):
 ```php
 $config['db_host'] = ''; // Database host (e.g. localhost)
 $config['db_name'] = ''; // Database name
