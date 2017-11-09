@@ -1,6 +1,6 @@
 # Sippy
 
-A lightweight, easy to use PHP Framework for building websites and web apps.
+A lightweight, easy to use PHP Framework for building websites and web apps. SippyV2 is now available with an updated framework, https://github.com/trafficinc/sippyV2.
 
 # Documentation
 
