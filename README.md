@@ -283,11 +283,15 @@ There are several helper functions that can also be used in models:
 * `escape($string)` - Escape strings before using them in queries
 * `insert($table, $dataArray)` - Insert into a table with an array
 
+# HTML and Escaping Output to the Browser and Element Builder
+
+There is a baked in HTML helper that you can use in controllers and views via $this->html->esc() and more, in your URL when you run sippy go to URL main/test to see available functionality.
+
 # Helpers & Plug-ins
 
 There are two types of additional resources you can use in Sippy.
 
-Helpers are classes which you can use that don't fall under the category of "controllers". These will usually be classes that provide extra functionality that you can use in your controllers. Sippy comes with two helper classes (Session_helper and Url_helper) which are examples of how to use helpers.
+Helpers are classes which you can use that don't fall under the category of "controllers". These will usually be classes that provide extra functionality that you can use in your controllers. Sippy comes with helper classes (Session_helper and Url_helper) which are examples of how to use helpers.
 
 Plugins are literally any PHP files and can provide any functionality you want. By loading a plugin you are simply including the PHP file from the "plugins" folder. This can be useful if you want to use third party libraries in your Sippy application.
 
