@@ -237,7 +237,7 @@ foreach ($heading as $head) {
 
 ## Models
 
-In Sippy models are classes that deal with data (usually from a database). For example:
+In Sippy models are classes that deal with data (usually from a database), a sample database is provided, load the testdb.sql file into sequel pro or your SQL gui of choice. For example:
 
 ```php
 <?php
