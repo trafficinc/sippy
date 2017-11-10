@@ -1,5 +1,7 @@
 <?php
 
+defined('ROOT_DIR') OR exit('No direct script access allowed');
+
 /**
  * Sippy Hooks go here.
  * 	Hook Options:

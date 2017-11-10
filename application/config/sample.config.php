@@ -1,4 +1,5 @@
 <?php
+defined('ROOT_DIR') OR exit('No direct script access allowed');
 
 // Base URL including trailing slash (e.g. http://localhost/)
 $config['base_url'] = '';
@@ -12,6 +13,7 @@ $config['activate_hooks'] = FALSE;
 $config['activate_logs'] = FALSE;
 //Log Path, set to 'logs/' :: logs DIR
 $config['log_path'] = 'logs/';
+$config['charset'] = 'UTF-8';
 
 //MySql Port
 //many systems default to port 3306

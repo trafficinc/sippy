@@ -1,5 +1,7 @@
 <?php
 
+defined('ROOT_DIR') OR exit('No direct script access allowed');
+
 class Sippy_model {
 
 	private $connection;
@@ -7,7 +9,12 @@ class Sippy_model {
 	public function __construct() {
 	    $config = load_config();
 		
-		$this->connection = mysqli_connect($config['db_host'].':'.$config['mysql_port'], $config['db_username'], $config['db_password'], $config['db_name']) or die('MySQL Error: '. $this->connection->error());
+		$this->connection = new mysqli($config['db_host'].':'.$config['mysql_port'], $config['db_username'], $config['db_password'], $config['db_name']);
+
+        if ($this->connection->connect_error) {
+            die('Connect Error (' . $this->connection->connect_errno . ') '
+                . $this->connection->connect_error);
+        }
 
 	}
 

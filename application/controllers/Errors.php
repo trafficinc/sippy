@@ -1,4 +1,5 @@
 <?php
+defined('ROOT_DIR') OR exit('No direct script access allowed');
 
 class Errors extends Sippy_controller {
 	

@@ -1,13 +1,17 @@
 <?php
+defined('ROOT_DIR') OR exit('No direct script access allowed');
 
 class Sippy_view {
 
 	private   $pageVars = array();
 	private   $template;
 	protected $security;
+    protected $html;
 
-	public function __construct($template, $data = NULL) {
+	public function __construct($template, $data = NULL, $config) {
+        $this->html = new Html($config);
 		$this->security = new Security;
+
 		if (empty($data)) {
 			$this->template = realpath(APP_DIR .'views/'. $template .'.php');
 		} else {
@@ -22,7 +26,6 @@ class Sippy_view {
 
 	public function render() {
 		extract($this->pageVars);
-
 		ob_start();
 		require($this->template);
 		echo ob_get_clean();

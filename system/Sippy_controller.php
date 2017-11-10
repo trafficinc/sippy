@@ -1,4 +1,5 @@
 <?php
+defined('ROOT_DIR') OR exit('No direct script access allowed');
 
 
 class Sippy_controller {
@@ -7,6 +8,7 @@ class Sippy_controller {
     protected $config;
     protected $security;
     protected $validation;
+    protected $html;
 
     public function __construct()
     {
@@ -14,6 +16,7 @@ class Sippy_controller {
         $config = load_config();
         $this->config = $config;
         $this->security = new Security;
+        $this->html = new Html($config);
         $this->flash = new FlashMessages;
         $this->validation = new Validation;
     }
@@ -26,10 +29,11 @@ class Sippy_controller {
 
     public function View($name, $data = NULL)
     {
+
         if (empty($data)) {
-            $view = new Sippy_view($name);
+            $view = new Sippy_view($name,"",$this->config);
         } else {
-            $view = new Sippy_view($name, $data);
+            $view = new Sippy_view($name, $data, $this->config);
         }
         return $view;
     }
