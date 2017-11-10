@@ -1,9 +1,19 @@
 <?php include(VIEWS_DIR .'/header.php'); ?>
 </head>
-<body>	
-    <div id="content">
+<body>
+<div class="container">
+
+    <div class="row">
+
+    <div class="col-md-12">
 
         <h1>HTML Library</h1>
+
+        <ul class="list-group">
+            <?php foreach($foo as $f): ?>
+                <li class="list-group-item"> <?php echo $f; ?> </li>
+           <?php endforeach; ?>
+        </ul>
         <?php
         //Escaping text
         $fromDB = "This is a example text <a href='#'>here</a>";
@@ -45,7 +55,8 @@
 
         ?>
 
-        
+    </div>
+    </div>
     </div>
 
 <?php include(VIEWS_DIR .'/footer.php'); ?>

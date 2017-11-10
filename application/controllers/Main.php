@@ -29,9 +29,9 @@ class Main extends Sippy_controller {
     public function test() {
 
         //use html helpers in controller too
-        var_dump($this->html->splits("12345",""));
+        $data['foo'] = $this->html->splits("12345","");
 
-        $template = $this->View('test_view');
+        $template = $this->View('test_view', $data);
         $template->render();
     }
 
