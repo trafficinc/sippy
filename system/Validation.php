@@ -10,7 +10,7 @@ class Validation {
     private $data;
     private $rules;
 
-    public function setup($data, $rules) {
+    public function go($data, $rules) {
 
         $this->data     = $data;
         $this->rules    = $rules;
