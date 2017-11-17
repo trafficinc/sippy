@@ -105,10 +105,11 @@ Then you can add this code to your controller for debugging.
 
 Example Controller validation & CSRF token protection & Flash Error/Success Messages:
 #controller
-        `require SYSTEM_DIR.'/Validation.php';`
-        `protected $validation;`
-        `in __constructor: $this->validation = new Validation;`
-        ----
+        ```
+        require SYSTEM_DIR.'/Validation.php';
+        protected $validation;
+        in __constructor: $this->validation = new Validation;
+        
         $data['messSuccess'] = $this->flash->message('success');
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -130,6 +131,7 @@ Example Controller validation & CSRF token protection & Flash Error/Success Mess
                 }
               }
           }
+          ```
 
 #view
 
