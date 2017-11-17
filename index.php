@@ -37,7 +37,10 @@ define('VIEWS_DIR', ROOT_DIR .'application/views/');
 
 // Includes
 function autoloadum($class) {
-  include ROOT_DIR ."system/".$class.".php";
+    $leaveOut = array('Validation');
+    if (! in_array($class, $leaveOut)) {
+        include ROOT_DIR ."system/".$class.".php";
+    }
 }
 spl_autoload_register("autoloadum");
 //Load helper functions
