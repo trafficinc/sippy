@@ -107,8 +107,12 @@ Example Controller validation & CSRF token protection & Flash Error/Success Mess
 #controller
         ```
         require SYSTEM_DIR.'/Validation.php';
+        ######  -- Class --
         protected $validation;
-        in __constructor: $this->validation = new Validation;
+        
+        function __constructor() {
+            $this->validation = new Validation;
+        }
         
         $data['messSuccess'] = $this->flash->message('success');
         
@@ -131,6 +135,7 @@ Example Controller validation & CSRF token protection & Flash Error/Success Mess
                 }
               }
           }
+         
           ```
 
 #view
