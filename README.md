@@ -105,13 +105,16 @@ Then you can add this code to your controller for debugging.
 
 Example Controller validation & CSRF token protection & Flash Error/Success Messages:
 #controller
-
+    
+        `protected $validation;`
+        `in __constructor: $this->validation = new Validation;`
+        ----
         $data['messSuccess'] = $this->flash->message('success');
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($_POST['csrf'] === $_SESSION['csrf_token']) {
             
-                $validator = $this->validate($_POST, [
+                $validator = $this->validation->go($_POST, [
                     'email' => 'required|min:5',
                     'password' => 'required',
                 ]);
