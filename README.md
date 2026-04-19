@@ -4,7 +4,7 @@ A lightweight, easy to use PHP Framework for building websites and web apps.
 
 > **Note:** this project is **not** being maintained, so please go to the new PHP framework **Wayfinder**, here:
 
-[Wayfinder PHP Framework](https://github.com/trafficinc/wayfinder-app)
+[Stackmint PHP Framework](https://github.com/trafficinc/stackmint)
 
 # Documentation
 
