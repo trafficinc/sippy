@@ -2,10 +2,6 @@
 
 A lightweight, easy to use PHP Framework for building websites and web apps.
 
-> **Note:** this project is **not** being maintained, so please go to the new PHP framework **Wayfinder**, here:
-
-[Stackmint PHP Framework](https://github.com/trafficinc/stackmint)
-
 # Documentation
 
 Sippy’s architecture bares striking resemblance to  Codeigniter, so we call it a lightweight PHP framework. However, remember that because Sippy is lightweight, it does not include a lot of the functionality that comes with Codeigniter.  Maybe we can add "plug-n-play" functionality via plug-ins, controllers, and libraries. To use remove the "sample" from config file in Application/config/sample.config.php so it is Application/config/config.php and fill in your configuration data.
