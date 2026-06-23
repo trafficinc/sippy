@@ -1,3 +1,17 @@
-.idea
-/application/config/config.php
+# Local environment
 .env
+.env.*
+!.env.example
+
+# Dependencies and local tools
+/vendor/
+composer.phar
+phpunit.phar
+
+# Generated logs
+/application/logs/
+*.log
+
+# Editor and OS files
+.idea/
+.DS_Store

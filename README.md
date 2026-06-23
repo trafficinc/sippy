@@ -272,7 +272,7 @@ foreach ($heading as $head) {
 
 ## Models
 
-In Sippy models are classes that deal with data (usually from a database), a sample database is provided, load the testdb.sql file into sequel pro or your SQL gui of choice. For example:
+In Sippy models are classes that deal with data, usually from a database. Optional demo data is provided in `testdb.sql` if you want to try the included example model and database route. Load it into your MySQL GUI or CLI only if you want that demo data. For example:
 
 ```php
 <?php
@@ -387,12 +387,11 @@ $hook['before_system'] = function() {
   func3();
 };
 ```
-# Quick n Dirty Command line
+# Command Line
 
-$ php bin/sippy.php [options]
+```bash
+php bin/sippy.php help
+php bin/sippy.php check:url
+```
 
-try
-
-$ php bin/sippy.php -help
-
-* add tasks n things to bin/sippy.php file
+`check:url` prints the configured `BASE_URL` value loaded from `.env`.

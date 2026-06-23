@@ -1,69 +1,35 @@
 <?php
-/**
- * Sippy 2.0
- * Quick and Dirty Tasks
- * Usage: $ php bin/sippy.php [options]
- *
- * todos: clear logs??, generate auth library
- *
- */
 
-error_reporting(0);
+define('ROOT_DIR', realpath(dirname(__DIR__)) . '/');
+define('APP_DIR', ROOT_DIR . 'application/');
+define('VIEWS_DIR', APP_DIR . 'views/');
 
-define('BASE_DIR', dirname(__DIR__));
-
-//require 'actions/Clear.php';
+require ROOT_DIR . 'system/Config.php';
 
 $arguments = array_slice($argv, 1);
-$flags = [];
+$command = isset($arguments[0]) ? $arguments[0] : 'help';
 
-//all main commands need a ':'
-$mainCommand = '';
-foreach ($arguments as $id) {
-    if (strpos($id, ':') !== false) {
-        /** @var string $mainCommand */
-        $mainCommand = $id;
-    }
-    if (strpos($id, '-') !== false) {
-        /** @var array $flags */
-        $flags[] = $id;
-    }
+switch ($command) {
+    case 'check:url':
+        $config = Config::getInstance()->getconfig();
+        echo $config['base_url'] . "\n";
+        break;
 
-}
+    case '-help':
+    case '--help':
+    case 'help':
+        echo <<<USAGE
+$ php bin/sippy.php [command]
 
-if (!empty($mainCommand)) {
-    $command = explode(":", $mainCommand);
+Commands:
+  check:url    Show current configured base URL
+  help         Show this help text
 
-    /* *
-     * Check set URL
-     * */
-
-    if ($command[0] === 'check') {
-        if ($command[1] === 'url') {
-            include(BASE_DIR. DIRECTORY_SEPARATOR. 'Application/config/config.php');
-            echo $config['base_url'] ."\n";
-        }
-    }
-    
-    //    Add more main commands
-
-
-}
-
-if (!empty($flags)) {
-    foreach ($flags as $flag) {
-        $flag = str_replace("-", '', $flag);
-
-        if ($flag === 'help') {
-            echo <<<USAGE
-$ php bin/sippy.php [options]          \r
------------- Options ----------------- \r
-check:url         Show current set URL \r
--help             help                 \n
 USAGE;
-        }
+        break;
 
-//    Add more flags
-
-    }
+    default:
+        fwrite(STDERR, "Unknown command: {$command}\n");
+        fwrite(STDERR, "Run `php bin/sippy.php help` for usage.\n");
+        exit(1);
 }
