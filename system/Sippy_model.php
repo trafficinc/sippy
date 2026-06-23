@@ -23,7 +23,9 @@ class Sippy_model {
 	}
 
 	public function escapeArray($array) {
-	    array_walk_recursive($array, create_function('&$v', '$v = $this->connection->escape_string($v);'));
+	    array_walk_recursive($array, function (&$v) {
+	        $v = $this->connection->escape_string($v);
+	    });
  		return $array;
 	}
 	
@@ -91,4 +93,3 @@ class Sippy_model {
 	    }
     
 }
-

@@ -618,11 +618,7 @@ class Mailer
             '<'  => '[',
             '>'  => ']',
         );
-        $filtered = filter_var(
-            $name,
-            FILTER_SANITIZE_STRING,
-            FILTER_FLAG_NO_ENCODE_QUOTES
-        );
+        $filtered = strip_tags($name);
         return trim(strtr($filtered, $rule));
     }
 

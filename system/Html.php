@@ -7,6 +7,8 @@
 
 class Html
 {
+    protected $config = [];
+
     public function __construct($config) {
         $this->config['charset'] = (isset($config['charset'])) ? $config['charset'] : 'UTF-8';
     }
@@ -162,7 +164,7 @@ class Html
     function el_list($values, $type = 'ul', $options = '')
     {
         $ulStartTag = "<" . $type . ">";
-        if (count($options) > 0 && is_array($options)) {
+        if (is_array($options) && count($options) > 0) {
             $list = array("<" . $type);
             foreach ($options as $okey => $oval) {
                 // check for associative array
@@ -177,7 +179,7 @@ class Html
         }
 
         $lines = array($ulStartTag);
-        if (count($values) > 0 && is_array($values)) {
+        if (is_array($values) && count($values) > 0) {
             foreach ($values as $val) {
                 $lines[] = "<li>" . $val . "</li>";
             }
@@ -187,6 +189,4 @@ class Html
     }
 
 }
-
-
 

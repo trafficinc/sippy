@@ -15,5 +15,3 @@ class Errors extends Sippy_controller {
 	}
     
 }
-
-?>

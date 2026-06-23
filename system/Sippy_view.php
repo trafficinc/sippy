@@ -8,7 +8,7 @@ class Sippy_view {
 	protected $security;
     protected $html;
 
-	public function __construct($template, $data = NULL, $config) {
+	public function __construct($template, $data, $config) {
         $this->html = new Html($config);
 		$this->security = new Security;
 

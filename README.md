@@ -4,7 +4,32 @@ A lightweight, easy to use PHP Framework for building websites and web apps.
 
 # Documentation
 
-Sippy’s architecture bares striking resemblance to  Codeigniter, so we call it a lightweight PHP framework. However, remember that because Sippy is lightweight, it does not include a lot of the functionality that comes with Codeigniter.  Maybe we can add "plug-n-play" functionality via plug-ins, controllers, and libraries. To use remove the "sample" from config file in Application/config/sample.config.php so it is Application/config/config.php and fill in your configuration data.
+Sippy’s architecture bares striking resemblance to  Codeigniter, so we call it a lightweight PHP framework. However, remember that because Sippy is lightweight, it does not include a lot of the functionality that comes with Codeigniter.  Maybe we can add "plug-n-play" functionality via plug-ins, controllers, and libraries.
+
+# Requirements
+
+Sippy has been updated for PHP 8. The framework has been smoke-tested on PHP 8.4 and avoids removed/deprecated PHP 8 APIs such as `create_function()`, curly-brace string offsets, and `FILTER_SANITIZE_STRING`.
+
+# Setup
+
+Create your local environment file from the example:
+
+```bash
+cp .env.example .env
+```
+
+Then update `.env` for your local URL and database settings:
+
+```env
+BASE_URL=http://localhost:8000/
+MYSQL_PORT=3306
+DB_HOST=127.0.0.1
+DB_NAME=database_name
+DB_USERNAME=database_user
+DB_PASSWORD=database_password
+```
+
+The application config is loaded from `application/config/config.php`, which reads values from `.env`.
 
 # Model-View-Controller
 
@@ -277,12 +302,14 @@ function index()
     $template->render();
 }
 ```
-Now the results of your database query would be available in your view in $someval. Connecting to the MySQL Database can be done in your `config/config.php` file (remember to rename the `sample.config.php` file):
-```php
-$config['db_host'] = ''; // Database host (e.g. localhost)
-$config['db_name'] = ''; // Database name
-$config['db_username'] = ''; // Database username
-$config['db_password'] = ''; // Database password
+Now the results of your database query would be available in your view in $someval. Connecting to the MySQL Database is configured through `.env`:
+
+```env
+MYSQL_PORT=3306
+DB_HOST=127.0.0.1
+DB_NAME=database_name
+DB_USERNAME=database_user
+DB_PASSWORD=database_password
 ```
 There are several helper functions that can also be used in models:
 
